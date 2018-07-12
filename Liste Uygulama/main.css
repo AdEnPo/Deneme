@@ -1,0 +1,102 @@
+*{
+	box-sizing: border-box;
+}
+ul{
+	margin: 2px;
+	padding: 0;
+}
+ul li{
+	cursor: pointer;
+	position: relative;
+	padding: 12px 40px 12px 40px;
+	background: #eee;
+	font-size: 18px;
+	transition: 0.2s;
+	margin-bottom: 2px; 
+	word-wrap: break-word;/*taşan yazı varsa alt satıra at*/
+	/*overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;çok uzun gösteme uzun olduğunu ... ile belirt*/
+
+	/*-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;*/
+}
+/*ul li:nth-child(odd){
+	background: #f9f9f9;/*elamanları bir beyaz bir gri renkli yapar*
+}*/
+ul li:hover{
+	background: #ddd;	
+}
+
+ul li.checked {/*işaretleme*/
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;/*işaretlenenin üstünü çizme*/
+}
+ul li.checked::before {/*İşaretlenen satırın önüne(before) tik işareti atma*/
+    content: '';
+    position: absolute;	
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);/*tik işaretinin doğru eğimde lmasını sağlıyor*/
+    height: 15px;
+    width: 7px;
+}
+
+.close{
+	position: absolute;/*en sağa geçmesi için*/
+	right: 0;
+	top: 0;
+	padding: 12px 16px 12px 16px; 
+}
+.close:hover{
+	background-color: #f44336;
+	color: white;
+}
+.header{
+	background-color: darkcyan;
+	padding: 30px 40px;
+	color: white;
+	text-align: center;/*içindeki ortalayarak yazar*/
+}
+.header:after{
+	content: "";
+	display: table;/*içine konulan her şeyi tablo şeklinde düzenler*/
+	clear: both;
+}
+
+input{
+		margin: 0;
+		border: none;/*kenarlığı olmasın*/
+		border-radius: 10px	;/*yuvarlak kenar olsun 10px kadar*/
+		width: 75%;/*kullandığı yerin %75 bunun olsun*/
+		padding: 10px;
+		float: left;/*hangi kenara yaslanacağını belirler*/
+		font-size: 16px;
+}
+.eklebtn{
+	padding: 10px;
+	width: 20%;/*kullandığı yerin %20 bunun olsun*/
+	background: #d9d9d9;
+	color: #555;
+	float: right;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.2s;/*üzerinde yapılacak değişikliğin ne kadar sürede olacağını belirler*/
+	border-radius: 0;
+}
+.eklebtn:hover{/*hover üzerine gelince olacak olay anlamında kullanılır*/
+	background-color: #bbb;
+}
+#gec2{
+	display: none;
+	height: 250px;
+	width: 332.5px;
+	text-align: center;
+}

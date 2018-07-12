@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+	<title>Notlar</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div id= "ekran" class="header">
+		<img id=gec2 src="giphy1.gif">
+		<h2 id="gec">Listem</h2>
+
+		<input type="text" id="ip" placeholder="Not Al.."><!--//"placeholder gizli yaziyo"-->
+		<!--<button onclick="yeniekle()"> ekle</button>-->
+		<span onclick="yeniekle()" class="eklebtn">Ekle</span>
+	</div>	
+
+	<ul id="List">
+		<li>sadfasfs</li>
+		<li>asdfasfasdfa</li>
+		<li class="checked">sdfasasdasf</li>
+		<li>sdddxfasf</li>
+		<li>sdfişlasf</li>
+		<li>qwertyuıopğ,işlkjhgfdsazxazxcvbnmöçi,üğpokmnbhvgtfrdesdxcfvgyhuıoklökmnjbhgv1234567890*ğplokıjhgfd</li>
+
+	</ul>
+	
+	<script  type="text/javascript">
+		var list = document.getElementsByTagName("LI");
+		var i;
+		for (var i = 0; i < list.length; i++) {
+			var span = document.createElement("SPAN");
+			var txt = document.createTextNode("\u00D7");//x harfinin tam kapat işareti olanı
+			span.className = "close";//hepsini akraba yaptık ki kolay ulaşalım
+			span.appendChild(txt);
+			list[i].appendChild(span);
+		}//Listedeki her elemanı kapatmak için gerekli tuş ataması 
+
+		var close = document.getElementsByClassName("close");
+		var i;
+		for (var i = 0; i < close.length; i++) {
+			close[i].onclick = function () {
+				var div=this.parentElement;//close spanının bulunduğu satırı al
+				div.style.display = "none";//listeden sil
+			}//close a basınca notu silme
+		}
+
+		var listes = document.querySelector('ul');
+		listes.addEventListener('click', function(ev) {
+		if (ev.target.tagName === 'LI') {
+			ev.target.classList.toggle('checked');
+			}
+		}, false);
+
+
+		function yeniekle() {//Ekle butonuna basınca listeye eleman ekleme
+			var li = document.createElement("LI");
+			var girisDegeri = document.getElementById("ip").value;
+			var j=document.createTextNode(girisDegeri);
+			li.appendChild(j);
+			if(girisDegeri ===""){//bir şey yazmadan butona basılırsa
+				alert("Hiç Bir Şey Yazmadın");
+			}
+			else{
+				document.getElementById("List").appendChild(li);
+				localStorage.setItem("Not",girisDegeri);
+			}
+			document.getElementById("ip").value = "";//butona bastıktan sonra alanı temizle
+
+
+			var span = document.createElement("SPAN");
+			var txt = document.createTextNode("\u00D7");
+			span.className = "close";
+			li.appendChild(span);
+			span.appendChild(txt);
+			for (i = 0; i < close.length; i++) {
+			 	close[i].onclick = function() {
+					var div = this.parentElement;
+					div.style.display = "none";
+				}
+			} 
+		}
+
+	</script>
+	
+
+	<script type="text/javascript" src="jquery/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
