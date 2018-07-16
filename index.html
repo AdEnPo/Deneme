@@ -16,18 +16,16 @@
 	</div>	
 
 	<ul id="List">
-		<li>sadfasfs</li>
-		<li>asdfasfasdfa</li>
+		<li>sadfasf</li>
 		<li class="checked">sdfasasdasf</li>
 		<li>sdddxfasf</li>
 		<li>sdfişlasf</li>
-		<li>alfdmxv655</li>
-		<li>alfdmxv655</li>
-		<li>aasdflfdmxv655</li>
-		<li>alfzxcvzxdmxv655</li>
 		<li>qwertyuıopğ,işlkjhgfdsazxazxcvbnmöçi,üğpokmnbhvgtfrdesdxcfvgyhuıoklökmnjbhgv1234567890*ğplokıjhgfd</li>
 
 	</ul>
+	<div onclick="sil()" class="tümünüsil">
+		<span >Hepsini Sil</span>
+	</div>
 	
 	<script  type="text/javascript">
 		var list = document.getElementsByTagName("LI");
@@ -48,6 +46,22 @@
 				div.style.display = "none";//listeden sil
 			}//close a basınca notu silme
 		}
+		
+		function sil(){//tümünü silme
+			var hsil= document.getElementsByClassName("close");
+			for (var i = 0; i < hsil.length; i++) {
+				hsil[i].parentElement.style.display="none";
+			}
+			
+
+		}
+		/*var sil=document.getElementsByTagName('LI');
+		var j=0;
+		for(var j=0; j<sil.length; j++){
+			sil[j].onclick=function{
+			this.element.style.display='none';
+			}
+		}*/
 
 		var listes = document.querySelector('ul');
 		listes.addEventListener('click', function(ev) {

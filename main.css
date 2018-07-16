@@ -58,6 +58,24 @@ ul li.checked::before {/*İşaretlenen satırın önüne(before) tik işareti at
 	background-color: #f44336;
 	color: white;
 }
+.tümünüsil{
+	border-radius: 5px;
+	padding: 8px 10px;
+	color: white;
+	font-size: 22px;
+	font-family: Arial;
+	position: fixed;
+	right: 8px;
+	bottom: 8px;
+	text-align: center;
+	z-index: 1;
+	background-color: darkcyan; 
+}
+.tümünüsil:hover{
+	background-color:#222121;
+	color: white;
+}
+
 .header{
 	background-color: darkcyan;
 	padding: 30px 40px;
